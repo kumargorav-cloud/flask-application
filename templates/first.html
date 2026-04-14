@@ -1,10 +1,29 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First HTML File </title>
-</head>
-<body>
-    <h1>This is first html file</h1>
-</body>
-</html>
+{% extends "base.html" %}
+<!---use this to extract base.html file with the help of jinja2 templating-->
+{% block title %}Default{% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+<!--here html body code is written-->
+
+<!---jinja2 templating to send any custom data from server to client-->
+    {{ myval1 }}
+    {{ myval2 }}
+
+    <p>Iteration over list which is send by server to client</p>
+
+    <!--if we start from for loop then we have to close it with endfor-->
+    {% for item in mylist %}
+    <ul>
+        <li>this is number {{ item }}</li>
+    </ul>
+    {% endfor %}
+
+    <h1>Index</h1>
+    <p style="color: red; font-size: 50px">
+      Hello this is first HTML file
+    </p>
+{% endblock %}
