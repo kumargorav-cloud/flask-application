@@ -1,4 +1,4 @@
-from flask import Flask, render_template,request,Response,send_from_directory
+from flask import Flask, render_template,request,Response,send_from_directory, jsonify
 import pandas as pd
 import uuid
 # in this we will learn about handling forms data
@@ -72,7 +72,7 @@ def handle_request():
     with open('file.txt','w') as f:
         f.write(f"{gretting},{name}")
 
-    return {'message':'success'}
+    return jsonify({'message':'success'})
 
 
 
