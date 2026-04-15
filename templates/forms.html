@@ -19,4 +19,21 @@
 <input type="submit" value="Upload File" name="" id="">
 </form>
 
+<h1>File Conversion</h1>
+<form method="POST" enctype="multipart/form-data" action="{{ url_for('convert_to_csv') }}">
+<input type="file" required="required"  name="file" id="" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel">
+<input type="submit" value="convert to csv" name="" id="">
+</form>
+
+<h1>Covert to CSV two</h1>
+<form method="POST" enctype="multipart/form-data" action="{{ url_for('convert_csv_two') }}">
+<input type="file" required="required"  name="file" id="" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel">
+<input type="submit" value="convert to csv" name="" id="">
+</form>
+
+<h1>JavaScript JSON Request</h1>
+<button  id="java_post">Send POST Request</button>
+
+
+
 {% endblock %}
