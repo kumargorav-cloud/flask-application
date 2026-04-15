@@ -10,20 +10,23 @@
 <!--here html body code is written-->
 
 <!---jinja2 templating to send any custom data from server to client-->
-    {{ myval1 }}
-    {{ myval2 }}
+{{ myval1 }}
+{{ myval2 }}
 
-    <p>Iteration over list which is send by server to client</p>
+<p>Iteration over list which is send by server to client</p>
 
-    <!--if we start from for loop then we have to close it with endfor-->
+<!--if we start from for loop then we have to close it with endfor-->
+<ul>
     {% for item in mylist %}
-    <ul>
-        <li>this is number {{ item }}</li>
-    </ul>
+        <li {% if item == '23' %} style="color: rgb(213, 10, 10); font-size: 30px;" {% endif %}>{{ item }}</li>
     {% endfor %}
+</ul>
 
-    <h1>Index</h1>
-    <p style="color: red; font-size: 50px">
-      Hello this is first HTML file
-    </p>
+<h1>Index</h1>
+<p style="color: red; font-size: 50px">
+    Hello this is first HTML file
+</p>
+
+<!---assigning link to any function or other page-->
+<a href="{{ url_for('filters') }}">Filters</a>
 {% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Default{% endblock %}
+{% block head %}
+{% endblock %}
+
+{% block content %}
+
+<h1>This is Filter HTML File</h1>
+<p>{{ some_text }}</p>
+{{ some_text | upper }}
+{{ some_text | lower }}
+{{ some_text| title }}
+{{ some_text| replace('l','L') }}
+
+{% endblock %}

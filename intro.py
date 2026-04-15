@@ -1,4 +1,4 @@
-from flask import Flask, render_template,request,make_response
+from flask import Flask, render_template,request,make_response,redirect,url_for
 
 app = Flask(__name__)
 
@@ -53,9 +53,16 @@ def url_params():
 
 
 
+@app.route("/filters")
+def filters():
+    some_text = "Hello Filter"
+    return render_template('filters.html',some_text=some_text)
 
+# getting the page with the help of redirect
 
-
+@app.route("/redirect_endpoint")
+def redirect_endpoint():
+    return redirect(url_for('filters'))
 
 
 if __name__ == "__main__":

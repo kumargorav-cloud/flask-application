@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Default{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+
+<h1>This is Forms HTML File</h1>
+<form method="POST" action="{{ url_for('forms') }}">
+    <input type="text" name="username" placeholder="username" id="">
+    <input type="password" name="password" placeholder="password" id="">
+    <input type="submit" value="Login" name="" id="">
+</form>
+
+<h1>File Upload Section</h1>
+<form method="POST" enctype="multipart/form-data" action="{{ url_for('file_upload') }}">
+<input type="file" required="required"  name="file" id="" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel,text/plain">
+<input type="submit" value="Upload File" name="" id="">
+</form>
+
+{% endblock %}
