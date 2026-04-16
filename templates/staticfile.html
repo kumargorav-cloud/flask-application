@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "baseforlogin.html" %}
 {% block title %}Default{% endblock %}
 
 {% block content %}
@@ -9,5 +9,16 @@
 
 <button type="submit" id="testing">This is java script button</button>
 <script type="text/javascript" src="/js/staticjs.js"></script>
+
+<p style="color: red; font-style: italic; font-size: 20px;">{{ message }}</p>
+
+<p><a href="{{ url_for('set_data') }}">Set session data</a></p>
+<p><a href="{{ url_for('get_data') }}">Get session data</a></p>
+<p><a href="{{ url_for('clear_data') }}">Clear session data</a></p>
+<p><a href="{{ url_for('simple') }}">Go to main page</a></p>
+<p><a href="{{ url_for('set_cookies') }}">set cookies</a></p>
+<p><a href="{{ url_for('get_cookies') }}">get cookies</a></p>
+<p><a href="{{ url_for('remove_cookie') }}">remove cookies</a></p>
+<p><a href="{{ url_for('login') }}">Login Page</a></p>
 
 {% endblock %}
